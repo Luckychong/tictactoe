@@ -1,9 +1,14 @@
 let user= "O";
-let number= "0";
-let 
+let number= 0;
+let gameover= false;
 
 
+function performLogic(buttonID, tileID) {
+$(buttonID).hide();
 
+$(tileID).text(user);
+
+}
 
 
 
