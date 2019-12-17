@@ -1,5 +1,5 @@
 let user= "O";
-let number= 0;
+let numberofturns= 0;
 let gameover= false;
 
 
@@ -9,9 +9,13 @@ $(buttonID).hide();
 $(tileID).text(user);
 
 }
+function switchedPlayer() {
+    if (user=== "X"){user= "O"}
+    else  {user= "X"}
+}
+function tie () {
 
-
-
+}
 $("#button1").click(function() {
     performLogic("#button1","#tile1");
 });
