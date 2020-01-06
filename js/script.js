@@ -4,10 +4,16 @@ let gameover= false;
 
 
 function performLogic(buttonID, tileID) {
-    $(buttonID).hide();
-    $(tileID).text(user);
-    user = switchedPlayer(user);
-    endGame();
+    if (gameover == false){
+        $(buttonID).hide();
+        $(tileID).text(user);
+        checkVerticalWins();
+        checkDiagonalWins();
+        checkHoritzonalWins();
+        user = switchedPlayer(user);
+        endGame();
+    }
+    
 }
 function switchedPlayer(user) {
     if (user == "X"){
@@ -23,6 +29,38 @@ function endGame() {
     if (numberofturns === 9) {
         $("#title").text("It's a draw!")
         gameover = true
+    }
+}
+
+function winner(tile1, tile2, tile3){
+    t1 = $(tile1).text()
+    t2 = $(tile2).text()
+    t3 = $(tile3).text()
+    if (t1 === user && t2 === user && t3 === user){
+        return true
+    } 
+    else {
+        return false
+    }
+}
+
+function checkVerticalWins(){
+    if (winner("#tile1", "#tile4", "#tile7") == true || winner("#tile2", "#tile5", "#tile8") == true || winner("#tile3", "#tile6", "#tile9") == true) {
+        $("#title").text(user + " Wins!")
+        gameover = true
+    }
+
+}
+function checkHoritzonalWins(){
+    if (winner("#tile1", "#tile2", "#tile3") == true || winner("#tile4", "#tile5", "#tile6") == true || winner("#tile7", "#tile8", "#tile9") == true) {
+            $("#title").text(user + " Wins!")
+            gameover = true
+    }
+}
+function checkDiagonalWins(){
+    if (winner("#tile1", "#tile5", "#tile9") == true || winner("#tile3", "#tile5", "#tile7") == true) {
+            $("#title").text(user + " Wins!")
+            gameover = true
     }
 }
 $("#button1").click(function() {
