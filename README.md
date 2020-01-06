@@ -22,7 +22,7 @@ In this unit, coders will create the classic game of tic tac toe in their browse
 - [x] Create a variable of a boolean type that will signal whether or not the game has ended and set it equal to false
 - [x] Implement behavior to place pieces on the board. Do this by creating a function called performLogic with parameters buttonId and tileId that removes the button of the corresponding buttonId, and changes the text of the div that is the tileId to the player variable.
 - [x] Implement behavior that will change the turns of the player. Do this by writing a function that will change the current player to either "X" or "O" depending on the current player. Decide where to put this function.
-- [ ] Implement behavior that will change the title to "It's a draw!" and end the game by changing the boolean variable to true after 9 pieces are placed. Do this by writing a function that will add 1 to the current turns, and check if that counter has reached 9.
+- [x] Implement behavior that will change the title to "It's a draw!" and end the game by changing the boolean variable to true after 9 pieces are placed. Do this by writing a function that will add 1 to the current turns, and check if that counter has reached 9.
 
 #### Wrap
 - [x] Push your changes!

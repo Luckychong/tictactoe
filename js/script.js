@@ -4,17 +4,26 @@ let gameover= false;
 
 
 function performLogic(buttonID, tileID) {
-$(buttonID).hide();
-
-$(tileID).text(user);
+    $(buttonID).hide();
+    $(tileID).text(user);
+    user = switchedPlayer(user);
+    endGame();
+}
+function switchedPlayer(user) {
+    if (user == "X"){
+        return "O"
+    }
+    else  {
+        return "X"
+    }
 
 }
-function switchedPlayer() {
-    if (user=== "X"){user= "O"}
-    else  {user= "X"}
-}
-function tie () {
-
+function endGame() {
+    numberofturns = numberofturns + 1
+    if (numberofturns === 9) {
+        $("#title").text("It's a draw!")
+        gameover = true
+    }
 }
 $("#button1").click(function() {
     performLogic("#button1","#tile1");
